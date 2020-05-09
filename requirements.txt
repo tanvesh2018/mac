@@ -11,4 +11,5 @@ six==1.14.0
 sqlparse==0.3.1
 virtualenv==20.0.17
 virtualenvwrapper-win==1.2.6
+whitenoise==5.0.1
 zipp==3.1.0
