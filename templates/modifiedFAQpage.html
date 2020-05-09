@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+ {% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>FAQs</title>
+</head>
+<style>
+    #button5 {
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+    }
+
+    #footer {
+
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f7f7f7;
+        color: black;
+        text-align: center;
+    }
+
+    .common {
+        text-align: center;
+    }
+
+    #bg {
+        background-color: #f7f7f7
+    }
+
+    .table {
+        border-spacing: 0px;
+    }
+
+    html {
+        zoom: 80%;
+    }
+
+    ;
+
+    .new {
+        height: 900px;
+        width: 1000px;
+
+
+    }
+
+    .bg-image {
+        background-image: url("{%static '/images/faqs.jpg' %}");
+        box-shadow: 0 8px 6px -6px black;
+        height: 700px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    #scroll {
+        font-size: 20px;
+    }
+</style>
+
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav">
+        <a class="navbar-brand" href="{% url 'index' %}"> <img src="{%static '/images/symbol.png' %}"  style="height:50px; width:50px; margin-bottom:20px"><b
+                style="font-size:50px;margin-left: 10px;">सबल</b> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Home</b>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'team' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Our
+                            Team</b> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'activity' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Services</b>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Photo
+                            Gallery</b> </a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">About
+                            Us</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'about' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">About
+                                Us
+                            </b></a>
+
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'FAQ' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">FAQs
+                            </b></a>
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'contact' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact
+                        </b></a>
+                        <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc_CT54lL7pJDcnQE3mTkzpRlHOSC0RACFqO-uHwUszPzz9KQ/viewform" target="blank"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact form<sup>new</sup>
+                        </b></a>
+
+                    </div>
+                </li>
+
+
+
+            </ul>
+            <a href="{% url 'donate' %}">
+                <button class="btn btn-outline my-2 my-sm-0" type="submit" style="padding: 5px 40px;" id="button5">
+                    <b>Donate</b> </button>
+            </a>
+        </div>
+    </nav>
+    <div class="bg-image">
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <br>
+
+        <br>
+        <br>
+    </div>
+    <br>
+        <marquee behavior="scroll" direction="left"> <a href="{% url 'covid' %}" id="scroll"><b>For more updates of COVID-19 click here!
+                </b></a></marquee><br><br>
+
+            
+
+             
+            <div class="container">
+                
+                <h1 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:brown;">FAQs</h1><br>
+                <button data-toggle="collapse" data-target="#demo1" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>What information is sent to the donors?</b> </button>
+
+                <div id="demo1" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">The donor gets an instant acknowledgement mail along with an SMS. On receiving the reconciliation statement from the bank, a receipt is sent via e-mail immediately, followed by a hard copy by post (within India). The receipt is accompanied by a 'welcome pack' which is also a token of appreciation. The donor receives a birthday wish, wishes on important festivals, programme updates and an annual impact report during a year's time.</p>
+                </div> 
+
+            </div> 
+            <br> 
+            <div class="container">
+                
+                
+                <button data-toggle="collapse" data-target="#demo2" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>What will SABAL do with my donation?</b> </button>
+
+                <div id="demo2" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">As soon as the donation through cheque or online is reconciled by the bank, the amount is allotted to the specific programme, which it has been meant for. The utilization and results are managed, monitored and audited. The outcome is reflected in the annual impact report, which is shared with the donors.</p>
+                </div> 
+
+            </div> 
+            <br> 
+            <div class="container">
+                
+                
+                <button data-toggle="collapse" data-target="#demo3" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>How does Smile Foundation ensure that the donor's contribution is being utilized in the intended way?
+                </b> </button>
+
+                <div id="demo3" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Smile Foundation follows the principle of good governance. We have a four-tier audit mechanism to track and monitor the funds raised and utilized.</p>
+                </div> 
+
+            </div>  
+            <br> 
+            <div class="container">
+                
+                
+                <button data-toggle="collapse" data-target="#demo4" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>How can I register as a candidate ?</b> </button>
+
+                <div id="demo4" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">You can fill the registration form which is present on homepage. As soon as you fill the registration form we will contact you soon .</p>
+                </div> 
+
+            </div>        
+            <br> 
+            <div class="container">
+                
+                
+                <button data-toggle="collapse" data-target="#demo5" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>Does SABAL has any Franchise?</b> </button>
+
+                <div id="demo5" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">No SABAL does not have any Franchise. We believe in personal attention and franchise cannot give the quality and service of the core organisation.</p>
+                </div> 
+
+            </div>  
+            <br> 
+            <div class="container">
+                
+                
+                <button data-toggle="collapse" data-target="#demo6" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>What are the ways of measuring impacts of the various programmes?</b> </button>
+
+                <div id="demo6" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">SABAL Foundation has a proper programme management system which tracks progress and does periodic analysis - both qualitative and quantitative Periodic external evaluations are also done to gauge the impact and progress of various programmes.</p>
+                </div> 
+
+            </div>  
+            <br> 
+            <div class="container">
+                
+                
+                <button data-toggle="collapse" data-target="#demo7" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>What curriculum do you follow in the education programmes?
+                </b> </button>
+
+                <div id="demo7" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Our educational programme - Mission Education, for underprivileged children, follows the curriculum of the respective state board where the project is present and operational.
+                    </p>
+                </div> 
+
+            </div><br>
+
+                 <div class="container">
+
+
+                <button data-toggle="collapse" data-target="#demoa" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>From where do SABAL get all the donations?
+                </b> </button>
+
+                <div id="demoa" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">There are many national as well as international partners including multinational
+                        giants like TATA and other multinational banks such as aviva and hdfc bank
+                    </p>
+                </div>
+
+            </div><br>
+
+                 <div class="container">
+
+
+                <button data-toggle="collapse" data-target="#demos" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>Is SABAL nationally recognised organisation?
+                </b> </button>
+
+                <div id="demos" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Yes SABAL is nationally recognised institute and has also recieved many awards at national as well as international level
+                        and also few awards from government of India.
+                    </p>
+                </div>
+
+            </div><br>
+
+                 <div class="container">
+
+
+                <button data-toggle="collapse" data-target="#demow" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>What is basic educational requirement to enroll in SABAL?
+                </b> </button>
+
+                <div id="demow" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">No,not at all.Any one can register in SABAL.Volunteers are assigned work according to their capabilities
+                        and educational qualification.
+                    </p>
+                </div>
+
+            </div><br>
+
+                 <div class="container">
+
+
+                <button data-toggle="collapse" data-target="#demod" style="width:1200px;height: 50px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 20px;border-radius: 10px;"> <b>What should be minimum age of candidate to register in SABAL?
+
+                </b> </button>
+
+                <div id="demod" class="collapse">
+                    <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;"> There is no as such criteria .But generally candidates above 18 years are preferred.
+                    </p>
+                </div>
+
+            </div>
+            <br>
+
+
+
+
+            </div>  
+            <br><br>
+        
+
+        <div id="bg">
+    <div id="footer" style="padding: 1%;">
+        <h2
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            <img src="{%static '/images/symbol.png' %}"style="height: 25px;width: 30px;"> <b>सबल</b> Foundation </h2>
+        <p
+            style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;">
+            सबल<sup> © </sup> . All rights reserved | Created by Tanvesh Chavan</p>
+
+        <p
+            style="color: black;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            Follow us</p>
+
+        <a href="#" target="_blank">
+
+            <img src="{%static '/images/fblogo.png' %}"height="40px" width="40px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/inst.jpg' %}" height="50px" width="50px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/youtubelogo.jpg' %}" height="50px" width="50px">
+        </a>
+
+
+
+
+    </div>
+    </div>
+    <script>
+        var header = document.querySelector("#scroll")
+
+
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color
+        }
+
+
+        function changeHeaderColor() {
+            colorInput = getRandomColor()
+            header.style.color = colorInput;
+        }
+
+
+        setInterval("changeHeaderColor()", 500);
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

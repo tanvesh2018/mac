@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+ {% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Photo Gallery</title>
+</head>
+<style>
+    #button5 {
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+    }
+
+    #footer {
+
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f7f7f7;
+        color: black;
+        text-align: center;
+    }
+
+    .common {
+        text-align: center;
+    }
+
+    #bg {
+        background-color: #f7f7f7
+    }
+
+    .table {
+        border-spacing: 0px;
+    }
+    html{
+        zoom:80%;
+    }
+</style>
+
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav">
+        <a class="navbar-brand" href="{% url 'index' %}"> <img src="{%static '/images/symbol.png' %}"  style="height:50px; width:50px; margin-bottom:20px"><b
+                style="font-size:50px;margin-left: 10px;">सबल</b> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Home</b>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'team' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Our
+                            Team</b> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'activity' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Services</b>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Photo
+                            Gallery</b> </a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">About
+                            Us</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'about' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">About
+                                Us
+                            </b></a>
+
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'FAQ' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">FAQs
+                            </b></a>
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'contact' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact
+                        </b></a>
+                        <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc_CT54lL7pJDcnQE3mTkzpRlHOSC0RACFqO-uHwUszPzz9KQ/viewform" target="blank"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact form<sup>new</sup>
+                        </b></a>
+
+                    </div>
+                </li>
+
+
+
+            </ul>
+            <a href="{% url 'donate' %}">
+                <button class="btn btn-outline my-2 my-sm-0" type="submit" style="padding: 5px 40px;" id="button5">
+                    <b>Donate</b> </button>
+            </a>
+        </div>
+    </nav>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <marquee behavior="scroll" direction="left" > <a href="{% url 'covid' %}" id="scroll" style="font-size: 20px;"><b>For more updates of COVID-19 click here! </b></a></marquee>
+    <h1 style="text-align: center; font-size: 50px;font-family:Arial, Helvetica, sans-serif ;color:brown;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Photo Gallery</h1>
+    <br>
+    <p style="background-color: sienna; font-size: 30px;color:white;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" class='common'>Fight against COVID-19</p>
+    <div>
+        <table class="table" style="margin-left:auto;margin-right:auto;">
+            <tr>
+                <td> <img src="{%static '/images/covid1.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/covid2.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/covid3.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/covid4.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+            <tr>
+                <td> <img src="{%static '/images/covid5.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/covid6.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/covid7.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/covid8.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <p style="background-color: green; font-size: 30px;color:white;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class='common'>Tree Plantation</p>
+    <br>
+    <div>
+        <table class="table" style="margin-left:auto;margin-right:auto;">
+            <tr>
+                <td> <img src="{%static '/images/tree1.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/tree2.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/tree3.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/tree4.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+            <tr>
+                <td> <img src="{%static '/images/tree5.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/tree6.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/tree7.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/tree8.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <p style="background-color: red ;font-size: 30px;color:white;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class='common'>Blood Donation Camp</p>
+    <br>
+    <div>
+        <table class="table" style="margin-left:auto;margin-right:auto;">
+            <tr>
+                <td> <img src="{%static '/images/bd1.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/bd2.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/bd3.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/bd4.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+            <tr>
+                <td> <img src="{%static '/images/bd5.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/bd6.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/bd7.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/bd8.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <p style="background-color: orange; font-size: 30px;color:white;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif" class='common'>Visit to Orphanage</p>
+    <br>
+
+    <div>
+        <table class="table" style="margin-left:auto;margin-right:auto;">
+            <tr>
+                <td> <img src="{%static '/images/orp1.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/orp2.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/orp3.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/orp4.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+            <tr>
+                <td> <img src="{%static '/images/orp5.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/orp6.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/orp7.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+                <td> <img src="{%static '/images/orp8.jpg' %}" alt="Image Not found" height="300px" width="390px"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+
+
+      <div id="bg">
+    <div id="footer" style="padding: 1%;">
+        <h2
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            <img src="{%static '/images/symbol.png' %}" style="height: 25px;width: 30px;"> <b>सबल</b> Foundation </h2>
+        <p
+            style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;">
+            सबल<sup> © </sup> . All rights reserved | Created by Tanvesh Chavan</p>
+
+        <p
+            style="color: black;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            Follow us</p>
+
+        <a href="#" target="_blank">
+
+            <img src="{%static '/images/fblogo.png' %}"height="40px" width="40px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/inst.jpg' %}" height="50px" width="50px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/youtubelogo.jpg' %}" height="50px" width="50px">
+        </a>
+
+
+
+
+    </div>
+    </div>
+    <script>
+        var header = document.querySelector("#scroll")
+        
+
+       
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color
+        }
+
+        
+        function changeHeaderColor() {
+            colorInput = getRandomColor()
+            header.style.color = colorInput;
+        }
+
+        
+        setInterval("changeHeaderColor()", 500);
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

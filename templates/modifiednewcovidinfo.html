@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+ {% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>COVID-19 Updates</title>
+</head>
+<style>
+    #button5 {
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+    }
+
+    #footer {
+
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f7f7f7;
+        color: black;
+        text-align: center;
+    }
+
+    .common {
+        text-align: center;
+    }
+
+    #bg {
+        background-color: #f7f7f7
+    }
+
+    .table {
+        border-spacing: 0px;
+    }
+
+    html {
+        zoom: 80%;
+    }
+
+    ;
+
+    .new {
+        height: 900px;
+        width: 1000px;
+
+
+    }
+
+    .bg-image {
+        background-image: url("{%static '/images/coronavirus-blue.jpg' %}");
+        
+        height: 700px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    #scroll {
+        font-size: 20px;
+    }
+
+    body,
+    html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial;
+    }
+
+    /* Style tab links */
+    .tablink {
+        background-color: #3739c4;
+        color: white;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        font-size: 17px;
+        width: 25%;
+        border-radius: 20px;
+    }
+
+    .tablink:hover {
+        background-color:#515563 ;
+    }
+
+    /* Style the tab content (and add height:100% for full page content) */
+    .tabcontent {
+        color: black;
+        display: none;
+        padding: 100px 20px;
+        height: 100%;
+    }
+
+    #Home {
+        background-color: #edede4;
+    }
+
+    #News {
+        background-color: #edede4;
+    }
+
+    #Contact {
+        background-color: #edede4;
+    }
+
+    #About {
+        background-color: #edede4;
+    }
+</style>
+
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav">
+        <a class="navbar-brand" href="{% url 'index' %}"> <img src="{%static '/images/symbol.png' %}"  style="height:50px; width:50px; margin-bottom:20px"><b
+                style="font-size:50px;margin-left: 10px;">सबल</b> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Home</b>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'team' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Our
+                            Team</b> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'activity' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Services</b>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Photo
+                            Gallery</b> </a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">About
+                            Us</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'about' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">About
+                                Us
+                            </b></a>
+
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'FAQ' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">FAQs
+                            </b></a>
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'contact' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact
+                        </b></a>
+                        <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc_CT54lL7pJDcnQE3mTkzpRlHOSC0RACFqO-uHwUszPzz9KQ/viewform" target="blank"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact form<sup>new</sup>
+                        </b></a>
+
+                    </div>
+                </li>
+
+
+
+            </ul>
+            <a href="{% url 'donate' %}">
+                <button class="btn btn-outline my-2 my-sm-0" type="submit" style="padding: 5px 40px;" id="button5">
+                    <b>Donate</b> </button>
+            </a>
+        </div>
+    </nav>
+    <div class="bg-image">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="font-size: 60px;margin-left: 100px;color:white;margin-top: 100px ;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">COVID-19 Updates</h1>
+        <h1 style="font-size: 25px;margin-left: 100px;color:white;margin-bottom:100px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Help us by donating</h1>
+        <button type="button" class="btn btn-outline-light" style="height: 50px;width: 160px;margin-left: 100px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"> <b>
+                Donate</b> </button>
+        <br>
+
+        <br>
+        <br>
+    </div>
+
+
+    
+    <!--link for the tabs section: https://www.w3schools.com/howto/howto_js_full_page_tabs.asp-->
+    <button class="tablink" onclick="openPage('Home', this, '#a9a9de')"id="defaultOpen"> <b style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Health Resources</b> </button>
+    <button class="tablink" onclick="openPage('News', this, '#a9a9de')" ><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Government Advisories</b> </button>
+    <button class="tablink" onclick="openPage('Contact', this, '#a9a9de')"><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Children Activity Resources</b> </button>
+    <button class="tablink" onclick="openPage('About', this, '#a9a9de')"><b style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Impact</b> </button>
+
+    <div id="Home" class="tabcontent">
+        
+        <h1 style="font-size: 40px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:brown">Health Resources</h1>
+        <br>
+        
+        <div style="font-size: 19px;">
+            <li><a href="https://www.mohfw.gov.in/" target="_blank">Ministry of Health and Family Welfare</a></li>
+
+            <li><a href="https://www.mygov.in/covid-19/" target="_blank">MyGov Covid-19 Resources</a></li>
+
+            <li><a href="uploads/files/Guidlines-for-Child-Care-Institutions.pdf" target="_blank">Guidlines for Child Care Institutions</a></li>                        
+
+            <li><a href="https://www.who.int/india/emergencies/novel-coronavirus-2019" target="_blank">India ramps up efforts to contain novel corona virus</a></li>
+
+            <li><a href="https://medibulletin.com/complete-list-of-pvt-labs-where-you-can-get-tested-for-covid-19/" target="_blank">Complete list of Pvt Labs where you can get tested for COVID-19</a></li>
+
+            <li><a href="http://www.mastermindfoundation.com" target="_blank">COVID -19 free counselling pan India</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/RevisedCOVIDWebinarforPhysicianofficers2.pdf" target="_blank">Physical webinars on COVID-19</a></li>
+
+            <li><a href="https://www.youtube.com/watch?v=UIQlZBO2ilA&feature=youtu.be" target="_blank">Video on COVID-19 awareness among comunity level workers</a></li>
+
+            <li><a href="https://main.mohfw.gov.in/sites/default/files/Corona%20Discharge-Policy.pdf" target="_blank">Discharge policy of nCOV case</a></li>
+
+            <li><a href="https://main.mohfw.gov.in/sites/default/files/National%20Guidelines%20for%20IPC%20in%20HCF%20-%20final%281%29.pdf" target="_blank">National guidelines for infection prevention and control in Health care facilities</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/mentalhealthchildrean.pdf" target="_blank">Taking care of mental health of children during COVID - 19</a></li>
+
+            <li><a href="https://ncdc.gov.in/WriteReadData/l892s/90542653311584546120.pdf" target="_blank">Guidelines for Quarantine facilities COVID - 19</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/Guidelinesondisinfectionofcommonpublicplacesincludingoffices.pdf" target="_blank">COVID 19- Guidelines on disinfection of common public spaces including offices</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/LeafletGHFandDHGA.pdf" target="_blank">How to communicte with Covid-19 suspected or confirmed cases?</a></li>
+
+            <li><a href="https://youtu.be/OFFg21KhOV0" target="_blank">#COVID-19: Watch Mr. Amitabh Bachchan sharing his thoughts on Coronavirus</a></li>
+
+            <li><a href="https://youtu.be/maBw7HmrU8c" target="_blank">Reality about lockdown #IndiaFightsCorona</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/MindingourmindsduringCoronaeditedat.pdf" target="_blank">Minding our minds during the COVID-19</a></li>
+
+            <li><a href="https://youtu.be/OYD9bogtJlU" target="_blank">Connecting with li'l ones during the #COVID19 stay-in'</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/FINAL_14_03_2020_ENg.pdf" target="_blank">When to got tested for Covid -19?</a></li>
+
+            <li><a href="https://www.mohfw.gov.in/pdf/Mask-Eng.pdf" target="_blank">When to wear a mask?</a></li>
+
+        </div>
+    </div>
+
+    <div id="News" class="tabcontent" style="font-size:19px;">
+        
+        
+        <h1 style="font-size: 40px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:brown">Government Advisories</h1>
+        <br>
+        
+            <li ><a href="uploads/files/consolidated-guidelines-of-ministry-of-home-affairs-mha-for-containment-of-covid-19.pdf" target="_blank">Consolidated guidelines of Ministry of Home Affairs(MHA) for containment of Covid-19</a></li>
+
+            <li><a href="https://main.mohfw.gov.in/sites/default/files/schooladvisory.pdf" target="_blank">Covid-19 School advisory</a></li>
+
+            <li><a href="uploads/files/NCPCR_COVID_Advisory-English-29.03.2020.pdf" target="_blank">NCPCR COVID Advisory 29.03.2020 (English) </a></li>
+
+            <li><a href="uploads/files/NCPCR_COVID_Advisory-Hindi-29.03.2020.pdf" target="_blank">NCPCR COVID Advisory 29.03.2020 (Hindi)</a></li>
+
+            <li><a href="uploads/files/MWCD_AdvisoryToCHILDLINE.pdf" target="_blank">MWCD Advisory To CHILDLINE</a></li>
+
+            <li><a href="uploads/files/MWCD_AdvisoryToStatesOnCHILDLINE.pdf" target="_blank">MWCD Advisory To States On CHILDLINE</a></li>
+
+
+        </div>
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        
+        <h1 style="font-size: 40px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:brown">Children Activity Resources</h1>
+        <br>
+        
+        <div style="font-size: 20px;">
+            <li><a href="https://fun-corner.unodc.org/uploads/e4j-fun-corner/res/play_html/CHUKA_comic_English_v.pdf " target="_blank">Chuka break the silence</a></li>
+                                
+                                <li><a href="https://www.unodc.org/e4j/en/primary/e4j-tools-and-materials/thezorbs.html" target="_blank">The Zorbs</a></li>
+
+                                <li><a href="uploads/files/psychosocial-support-for-children-during-covid-19.pdf" target="_blank">Psychosocial Support for Children during COVID-19 </a></li>
+
+                                <li><a href="https://www.youtube.com/playlist?list=PLC7jI4zqLMklj1DiyC6F1ipvuObxHYvRy" target="_blank">Apalam Chapalam: Performative story telling for children</a></li>
+
+                                <li><a href="https://youtu.be/ARz2yuDcY6Y" target="_blank">How Children are becoming Covid warriors</a></li>
+                                <li><a href="https://www.wizardingworld.com/collections/harry-potter-at-home" target="_blank">Harry Potter at home</a></li>
+                                <li><a href="https://ncdc.gov.in/WriteReadData/l892s/10583471651584445527.pdf" target="_blank">Bacche, vayu aur Corona - Hindi Comic</a></li>
+
+                                <li><a href="https://www.mohfw.gov.in/pdf/Corona_comic_PGI.pdf" target="_blank">Bacche, vayu aur Corona - English Comic</a></li>
+
+                                <li><a href="https://www.vervemagazine.co.nz/lockdown-activities-for-the-kids/" target="_blank">Lockdown activities for the kids</a></li>
+
+                                
+
+                                <li><a href="https://nbtindia.gov.in/NBT_FreeBook4.aspx" target="_blank">NBT India - Download Free Books</a></li>
+
+                                <li><a href="https://www.sesamestreet.org/caring" target="_blank">Caring for each other from Sesame Street</a></li>
+
+        </div>
+    </div>
+
+    <div id="About" class="tabcontent">
+        
+        <h1 style="font-size: 40px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color:brown">Impact</h1>
+        <br>
+        
+        <div style="font-size: 20px;">
+                
+            <li><a href="https://www.bbc.com/news/business-51706225" target="_blank">Impact of coronavirus-BBC</a></li>
+            <li><a href="https://m.economictimes.com/wealth/personal-finance-news/impact-of-the-coronavirus-pandemic-on-the-world-economy-and-how-india-is-placed/articleshow/75217253.cms" target="_blank">Impact of corona virus on world</a></li>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div id="bg">
+    <div id="footer" style="padding: 1%;">
+        <h2
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            <img src="{%static '/images/symbol.png' %}"style="height: 25px;width: 30px;"> <b>सबल</b> Foundation </h2>
+        <p
+            style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;">
+            सबल<sup> © </sup> . All rights reserved | Created by Tanvesh Chavan</p>
+
+        <p
+            style="color: black;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            Follow us</p>
+
+        <a href="#" target="_blank">
+
+            <img src="{%static '/images/fblogo.png' %}"height="40px" width="40px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/inst.jpg' %}" height="50px" width="50px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/youtubelogo.jpg' %}" height="50px" width="50px">
+        </a>
+
+
+
+
+    </div>
+    </div>
+    <script>
+
+        function openPage(pageName, elmnt, color) {
+
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+
+            document.getElementById(pageName).style.display = "block";
+
+
+            elmnt.style.backgroundColor = color;
+        }
+
+
+        document.getElementById("defaultOpen").click();
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>

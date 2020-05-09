@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+ {% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Services</title>
+</head>
+<style>
+    #button5 {
+        border-radius: 5px;
+        background-color: green;
+        color: white;
+    }
+
+    #footer {
+
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f7f7f7;
+        color: black;
+        text-align: center;
+    }
+
+    .common {
+        text-align: center;
+    }
+
+    #bg {
+        background-color: #f7f7f7
+    }
+
+    .table {
+        border-spacing: 0px;
+    }
+
+    html {
+        zoom: 80%;
+    }
+
+    ;
+
+    .new {
+        height: 900px;
+        width: 1000px;
+
+
+    }
+
+    .bg-image {
+        background-image: url("{%static '/images/helpinghand.jpg' %}");
+        box-shadow: 0 8px 6px -6px black;
+        height: 700px;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    #scroll {
+        font-size: 20px;
+    }
+</style>
+
+<body>
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="nav">
+        <a class="navbar-brand" href="{% url 'index' %}"> <img src="{%static '/images/symbol.png' %}"  style="height:50px; width:50px; margin-bottom:20px"><b
+                style="font-size:50px;margin-left: 10px;">सबल</b> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Home</b>
+                        <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'team' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Our
+                            Team</b> </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'activity' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Services</b>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">Photo
+                            Gallery</b> </a>
+                </li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 16px;">About
+                            Us</b>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'about' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">About
+                                Us
+                            </b></a>
+
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'FAQ' %}"><b
+                                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">FAQs
+                            </b></a>
+                        <div class="dropdown-item"></div>
+                        <a class="dropdown-item" href="{% url 'contact' %}"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact
+                        </b></a>
+                        <a class="dropdown-item" href="https://docs.google.com/forms/d/e/1FAIpQLSc_CT54lL7pJDcnQE3mTkzpRlHOSC0RACFqO-uHwUszPzz9KQ/viewform" target="blank"><b
+                            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-size: 17px;">Contact form<sup>new</sup>
+                        </b></a>
+
+                    </div>
+                </li>
+
+
+
+            </ul>
+            <a href="{% url 'donate' %}">
+                <button class="btn btn-outline my-2 my-sm-0" type="submit" style="padding: 5px 40px;" id="button5">
+                    <b>Donate</b> </button>
+            </a>
+        </div>
+    </nav>
+    <div class="bg-image">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="font-size: 60px;margin-left: 100px;color:white;margin-top: 100px ;">Services</h1>
+        <h1 style="font-size: 40px;margin-left: 100px;color:white;margin-bottom:100px">Our work is our passion</h1>
+        <br>
+
+        <br>
+        <br>
+    </div>
+    <div style="background-color: #edede4;">
+
+        <br>
+        <marquee behavior="scroll" direction="left"> <a href="{% url 'covid' %}" id="scroll"><b>For more updates of COVID-19 click here!
+                </b></a></marquee>
+
+
+        <table style="margin:auto;">
+            <tr>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px"><img src="{%static '/images/food.jpg' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <br><br>
+                        <h1 style="font-size: 45px;color: brown;">Food distribution among laborours
+                            during Pandemic</h1>
+                        <br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+                            In the midst of the on-going pandemic, social distancing is a luxury that
+                            India’s informal workforce of 450 million cannot afford. With the government lockdown order
+                            and
+                            inadequate state provisions for food distribution, several families are sleeping hungry --
+                            in
+                            their
+                            homes, stranded at railway stations or state borders.
+
+                            To support our community in Maharashtra during lockdown, <b>SABAL</b> has increased capacity
+                            at
+                            the MCKS’ Kitchen
+                            by 6x and delivered 60,000+ nutritious cooked meals over the last 7 days. Each nutritious
+                            meal
+                            of
+                            approximately 450 calories, costs only INR 10 /-. We have in place a team of well-trained
+                            inhouse cooks
+                            who follow standard operating procedures to maintain hygiene and quality parameters.
+                            Head.</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table style="margin:auto;">
+            <tr>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;">
+                        <br><br><br>
+                        <h1 style="font-size: 45px;color: brown;">Mask making in this pandemic</h1>
+                        <br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+                            Since the corona pandemic has hit India and due to scarcity of masks there is
+                            need of making masks.
+                            We here at <b>SABAL</b> are making cotton masks at a very large scale and the masks are been
+                            supplied to
+                            various hospitals among various cities in Maharashtra.
+                            This mask making process also provide employment to the women and they also are benefitted
+                            from
+                            this
+                            task .There are various people who are helping us during this pandemic financially as well
+                            as by
+                            showing
+                            thier mental support.
+                            They will be working under strict social distancing and hygiene protocols to produce these
+                            masks
+                            and
+                            distribute them.</p>
+                    </div>
+                </td>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px"><img src="{%static '/images/mask.jpg' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+            </tr>
+        </table>
+        <table style="margin:auto;">
+            <tr>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px"><img src="{%static '/images/ambulance.jpg' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <br><br><br>
+                        <h1 style="font-size: 45px;color: brown;">Ambulance service</h1>
+                        <br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+                            Health services for people living in remote areas are a big challenge for the
+                            state. Distance from the health center, lack of transport system, economic condition of the
+                            people
+                            are of
+                            many factors that keep the poor living in remote areas away from the health services.
+                            <b>SABAL</b>foundation
+                            has
+                            been working to take the health services to the doorstep of the beneficiaries. Mobile
+                            Medical
+                            Unit has
+                            proved to be a landmark initiative in this field. Our MMU caters to the slums and sub-urban
+                            areas. The
+                            vans
+                            carry with it an MBBS doctor along with a skilled team of nurse and lab technicians.
+                            Diagnosis,
+                            tests,
+                            drug
+                            distribution all takes place at the van itself.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table style="margin:auto;">
+            <tr>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <br><br>
+                        <br>
+                        <h1 style="font-size: 45px;color: brown;">Women employment in rural areas
+                        </h1>
+                        <br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+                            Women have not actively participated in their emancipation due to their lack of economic
+                            independence and illiteracy. There is a need to address the issue by raising the status of
+                            women. The key lies in women empowerment through economic self-sufficiency and higher
+                            awareness
+                            levels on social, political and legal issues through mobilization. There is also a need to
+                            recognize and emphasize the diverse roles of women such as reproductive, productive and
+                            community management. Women should be organized and strengthened at the grass root level to
+                            end
+                            their subordination.<b>SABAL</b> is making an attempt in that direction to make rural women
+                            self
+                            sufficient through various skill training programmes.
+                        </p>
+                    </div>
+                </td>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px"><img src="{%static '/images/womenemp.jpg' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+
+            </tr>
+        </table>
+        <table style="margin:auto;">
+            <tr>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px;"><img src="{%static '/images/education.png' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <br><br><br><br>
+                        <h1 style="font-size: 45px;color: brown;">Education for everyone
+                        </h1><br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+
+                            NGO helps in identifying the most vulnerable children in the poorest states of India. Due to
+                            unaccessibility and poverty, children miss out on school. <b>SABAL</b> helps enrol children
+                            in
+                            school under the Right to Education Act (RTE). Children who have dropped out and missed few
+                            years of schooling, <b>SABAL</b> provides them with gap classes which help them get enrolled in
+                            their
+                            age-appropriate grade.
+
+
+                            Through workshops and various activities, awareness is generated amongst parents and local
+                            communities about the importance of education. <b>SABAL</b> also conducts regular counselling
+                            sessions to encourage parents to send their children especially girls to school and help
+                            them
+                            participate in various activities.
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+        <table style="margin:auto;">
+            <tr>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <br><br>
+                        <br><br><br>
+                        <h1 style="font-size: 45px;color: brown;">Tree Plantation
+                        </h1>
+                        <br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+
+                            <b>SABAL</b> organises tree plantation activities and inculcates the sense of responsibility
+                            among the young students across Maharashtra. The name of this program is ‘Go Green Kids.’
+                            They provide free saplings in schools and let the students plant and take care of those
+                            saplings. Also, they regularly check up to see how the trees are and surprisingly have a 95
+                            percent survival rate so far. Taking it ahead, they are now planning to expand their
+                            operations to schools across India.
+                        </p>
+                    </div>
+                </td>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px"><img src="{%static '/images/tree plantation.JPG' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+
+            </tr>
+        </table>
+
+        <table style="margin:auto;">
+            <tr>
+                <td style="border:20px solid #edede4">
+                    <div style="height: 600px;width :600px;"><img src="{%static '/images/orphange.jpg' %}" alt=""
+                            style="height: 600px; width: 600px;border-radius: 10px;"></div>
+                </td>
+                <td>
+                    <div
+                        style="overflow: auto;background-color:#f7f7f7;height: 600px;width :700px;border:3px solid gray;text-align: center;border-radius: 10px;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                        <br><br><br><br>
+                        <h1 style="font-size: 45px;color: brown;">Frequent visits to orphanage
+                        </h1><br><br>
+                        <p style="font-size: 17px;border:2px solid #f7f7f7">
+
+                            An orphanage houses children of various ages who either have no family or have lost their
+                            families in natural calamities.
+
+                            The home usually has a care-taker who monitors the children of the orphanage and a few
+                            helpers to take care of the residents.
+
+
+                            A visit to an orphanage is a life-changing experience as it is filled with emotions and
+                            sentiments.<b>SABAL</b> visits orphanage very often and fills the kids with joy and happiness.
+
+                            
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+
+
+
+        <div id="bg">
+    <div id="footer" style="padding: 1%;">
+        <h2
+            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+            <img src="{%static '/images/symbol.png' %}"style="height: 25px;width: 30px;"> <b>सबल</b> Foundation </h2>
+        <p
+            style="color: black;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;">
+            सबल<sup> © </sup> . All rights reserved | Created by Tanvesh Chavan</p>
+
+        <p
+            style="color: black;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+            Follow us</p>
+
+        <a href="#" target="_blank">
+
+            <img src="{%static '/images/fblogo.png' %}"height="40px" width="40px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/inst.jpg' %}" height="50px" width="50px">
+        </a>
+
+        <a href="#" target="_blank">
+            <img src="{%static '/images/youtubelogo.jpg' %}" height="50px" width="50px">
+        </a>
+
+
+
+
+    </div>
+    </div>
+    <script>
+        var header = document.querySelector("#scroll")
+
+
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color
+        }
+
+
+        function changeHeaderColor() {
+            colorInput = getRandomColor()
+            header.style.color = colorInput;
+        }
+
+
+        setInterval("changeHeaderColor()", 500);
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>
